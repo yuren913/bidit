@@ -11,10 +11,10 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @NotThreadSafe
-public class BidConcurrent {
+public class BidConcurrentVolatile {
 	public static int clientTotal = 5000;
 	public static int threadTotal = 200;
-	public static int localCount = 0;
+	public static volatile int localCount = 0;
 	
 	public static void main(String[] args) throws InterruptedException {
 		ExecutorService exeService = Executors.newCachedThreadPool();
